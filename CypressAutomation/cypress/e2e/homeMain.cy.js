@@ -1,5 +1,7 @@
 /// <reference types="Cypress" /> // This is for intellisense
 
+import HomePage from "../pageObjects/HomePage"
+
 describe('Mero Padhai HomePage and all a step more pages', () => {
 
   beforeEach(() => {
@@ -7,6 +9,7 @@ describe('Mero Padhai HomePage and all a step more pages', () => {
   })
 
   it('Visit the homepage.', () => {
+    const homePage = new HomePage()
     cy.get('.container > p')
       .should('have.text', 'Learn all courses at home.')
     // Cypress supports CSS selectors only.
